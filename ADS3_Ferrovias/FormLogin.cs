@@ -1,6 +1,7 @@
 ﻿using BLL;
 using System;
 using System.Windows.Forms;
+using Servicios;
 
 namespace ADS3_Ferrovias
 {
@@ -24,12 +25,11 @@ namespace ADS3_Ferrovias
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            Usuario usuario = loginService.Login(username, password);
+            loginService.Login(username, password);
 
-            if (usuario != null )
+            if (SessionManager.GetInstance.usuario != null )
             {
-                this.Hide();
-                menuPrincipal.Show();
+                this.Close();
             }
             else
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Servicios;
 
 namespace BLL
 {
@@ -16,15 +17,12 @@ namespace BLL
             { "pablo", "cruz" },
         };
 
-        public Usuario Login(string username, string password)
+        public void Login(string username, string password)
         {
             if (usuarios.ContainsKey(username) && usuarios[username] == password)
             {
-                return new Usuario { Username = username };
-            }
-            else
-            {
-                return null;
+                Usuario usuario = new Usuario { Username = username };
+                SessionManager.Login(usuario);
             }
         }
     }

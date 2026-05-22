@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Servicios;
 
 namespace ADS3_Ferrovias
 {
@@ -51,7 +52,22 @@ namespace ADS3_Ferrovias
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            menuStrip1.Visible = true;
+            menuStrip1.Visible = SessionManager.GetInstance.usuario != null;
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SessionManager.GetInstance.usuario != null)
+            {
+                SessionManager.Logout();
+            }
+
+            foreach (Form formulario in this.MdiChildren)
+            {
+                formulario.Close();
+            }
+
+            InicializarLogin();
         }
     }
 }
