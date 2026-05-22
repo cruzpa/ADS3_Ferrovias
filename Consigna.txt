@@ -1,0 +1,52 @@
+﻿Consigna
+Una empresa ferroviaria necesita un sistema que permita gestionar la
+administración y comercialización de los viajes que realiza a diferentes destinos.
+Para la planificación de los viajes se registran los diferentes tramos teniendo en
+cuenta que cada tramo está conformado por una estación extremo tanto para el
+origen como para el destino, y la distancia y tiempo que existe entre ambos,
+además, que pueden existir estaciones intermedias en las que el tren debe frenar
+para el arribo y descenso de pasajeros, en dichas estaciones el tiempo de demora
+es de 15 minutos adicionales. Ejemplo: Un viaje de Constitución a Miramar contiene
+los tramos de Constitución - Alejandro Korn, Alejandro Korn - Chascomús,
+Chascomús - Mar del Plata y Mar del Plata - Miramar. Sabiendo que en la estación
+Mar del Plata el tren frena para el arribo y descenso de pasajeros. El valor del viaje
+se calcula en función a un valor base de kilómetro, es decir, multiplicando dicho
+valor por la distancia de cada tramo, en caso de existir estaciones de intermedias el
+valor del viaje sufre un descuento del 2% por cada estación. Por ejemplo, desde
+Constitución a Mar del Plata hay 400 Km, si el valor base del kilómetro es de $2 el
+valor del viaje será de 400 x 2 = $800.
+Si hubiese una parada en Chascomús el valor sufriría un descuento del 2%, es decir:
+800 - ( (800 * 2) /100) = $784.
+De cada estación se conoce: el nombre, la localidad y la provincia. Se debe tener en
+cuenta que cada localidad puede tener varias estaciones. Además de los destinos
+el viaje posee una formación compuesta de vagones numerados, y
+categorizados(“turista”, “Pullman” y “ejecutivo”). Dependiendo de la categoría el
+valor total del viaje se encarece en un 5% en Pullman, 10% en ejecutivo y en turista
+no sufre modificaciones. Cada vagón turista posee 72 asientos numerados,
+mientras que en Pullman y ejecutivo tienen 54 butacas. Se sabe que cada formación
+es coordinada por un maquinista, del que se conoce su DNI, nombre y apellido y las
+formaciones habilitadas para llevar a cabo su trabajo diario. Es decir, un maquinista
+puede realizar distintos recorridos por jornada laboral Con todos estos elementos
+cargados se puede comenzar a comercializar el viaje.
+En cuanto a los pasajeros se debe poder registrar el nombre, apellido, fecha de
+nacimiento, DNI, y en el caso de menores de edad debe indicar que pasajero perteneciente al viaje es el responsable que lo acompaña, y cuál es la relación de
+parentesco con el menor. En caso de los pasajeros menores de 12 años se aplica un
+descuento del 50% al valor total del pasaje, es decir, cuesta la mitad. Cada pasaje
+que se emite debe mostrar la información completa del viaje, fecha, hora, duración
+estimada, origen y destino completo, origen y destino intermedio en caso de no
+contratar un recorrido completo, paradas, además, nombre, apellido y edad del
+pasajero, la categoría y butaca contratada, costo total del pasaje y los descuentos
+aplicados .La cancelación de los pasajes tiene un límite de 48 horas de antelación.
+Es muy importante considerar que una butaca puede ser ocupada en un
+determinado tramo, por ejemplo: de Constitución a Chascomús por el pasajero
+Juan, donde en Chascomús desciende y asciende Pedro ocupando la misma butaca
+hasta Mar del Plata, es decir, las butacas no pueden venderse en caso de
+superposición de tramos. La empresa considera los siguientes puntos importantes
+para el análisis y toma de decisiones:
+1) Obtener bajo demanda la recaudación total de la empresa.
+2) Obtener bajo demanda la recaudación discriminada por rutas y/o por
+categorías.
+3) Obtener la cantidad total de pasajeros en un viaje específico.
+4) Obtener la cantidad de pasajeros discriminado por rutas y/o por categorías.
+5) Permitir la venta de pasajes para formaciones que se encuentren con lugares
+disponibles en su respectivo viaje, además de las cancelaciones.

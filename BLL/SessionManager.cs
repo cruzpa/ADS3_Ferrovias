@@ -1,7 +1,7 @@
 ﻿using System;
 using BLL;
 
-namespace Servicios
+namespace BLL
 {
     public class SessionManager 
     {
