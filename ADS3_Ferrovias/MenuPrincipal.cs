@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Servicios;
+using BLL;
 
 namespace ADS3_Ferrovias
 {

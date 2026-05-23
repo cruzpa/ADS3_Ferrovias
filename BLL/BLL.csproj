@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoginService.cs" />
+    <Compile Include="MaquinistaService.cs" />
+    <Compile Include="PasajeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionManager.cs" />
+    <Compile Include="VentaPasajeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

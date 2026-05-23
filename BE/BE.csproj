@@ -41,10 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Butaca.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Estacion.cs" />
+    <Compile Include="Factura.cs" />
+    <Compile Include="Formacion.cs" />
     <Compile Include="Maquinista.cs" />
+    <Compile Include="Pasaje.cs" />
     <Compile Include="Pasajero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recorrido.cs" />
+    <Compile Include="Tramo.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="Vagon.cs" />
+    <Compile Include="Viaje.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
