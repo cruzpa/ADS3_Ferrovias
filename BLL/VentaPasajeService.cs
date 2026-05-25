@@ -32,12 +32,14 @@ namespace BLL
 
         private int ObtenerProximoNumero(Viaje viaje)
         {
-            if (viaje == null || viaje.Pasajes == null || !viaje.Pasajes.Any())
+            List<Pasaje> pasajes = pasajeService.ObtenerPasajesDeViaje(viaje);
+
+            if (!pasajes.Any())
             {
                 return 1;
             }
 
-            return viaje.Pasajes.Max(p => p.Numero) + 1;
+            return pasajes.Max(p => p.Numero) + 1;
         }
 
         private void CalcularImporte(Pasaje pasaje)

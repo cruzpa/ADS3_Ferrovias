@@ -8,6 +8,7 @@ namespace BLL
     public class ViajeService
     {
         private readonly List<Viaje> viajes;
+        private readonly PasajeService pasajeService = new PasajeService();
 
         public ViajeService()
         {
@@ -22,7 +23,7 @@ namespace BLL
 
             return viajes
                 .Where(viaje => viaje.FechaHoraSalida.Date == fechaSalida.Date)
-                .Where(viaje => ContieneTrayecto(viaje, origen, destino))
+                .Where(viaje => ContieneParadas(viaje, origen, destino))
                 .Select(viaje => CrearResultadoBusqueda(viaje, origen, destino, cantidadPasajeros, categoriaSeleccionada))
                 .Where(resultado => resultado.LugaresDisponibles >= cantidadPasajeros)
                 .ToList();
@@ -45,22 +46,32 @@ namespace BLL
             viajes.Add(viaje);
         }
 
+        //a fines practivos ViajeResultadoBusqueda proyecta la información relevante para la búsqueda comercial,
+        //incluyendo detalles del viaje, duración estimada, cantidad de paradas, categoría, lugares disponibles
+        //y precio estimado
+        //
+        //es mas comodo que devolver el Viaje completo.
         private ViajeResultadoBusqueda CrearResultadoBusqueda(Viaje viaje, Estacion origen, Estacion destino, int cantidadPasajeros, Categoria categoria)
         {
             List<Tramo> tramosContratados = ObtenerTramosEntre(viaje, origen, destino);
             int cantidadParadas = ObtenerParadasEntre(viaje, origen, destino).Count;
 
+
+            string duracion = CalcularDuracion(tramosContratados, cantidadParadas).ToString(@"hh\:mm");
+            int butacasDisponibles = ContarButacasDisponibles(viaje, origen, destino, categoria);
+            decimal precioEstimado = CalcularPrecioEstimado(viaje, tramosContratados, cantidadParadas, categoria) * cantidadPasajeros;
+            
             return new ViajeResultadoBusqueda
             {
                 FechaSalida = viaje.FechaHoraSalida.Date,
                 HoraSalida = viaje.FechaHoraSalida.TimeOfDay,
                 Origen = origen.Nombre,
                 Destino = destino.Nombre,
-                DuracionEstimada = CalcularDuracion(tramosContratados, cantidadParadas).ToString(@"hh\:mm"),
+                DuracionEstimada = duracion,
                 CantidadParadas = cantidadParadas,
                 Categoria = categoria.ToString(),
-                LugaresDisponibles = ContarButacasDisponibles(viaje, origen, destino, categoria),
-                PrecioEstimado = CalcularPrecioEstimado(viaje, tramosContratados, cantidadParadas, categoria) * cantidadPasajeros,
+                LugaresDisponibles = butacasDisponibles,
+                PrecioEstimado = precioEstimado,
                 Viaje = viaje
             };
         }
@@ -116,7 +127,7 @@ namespace BLL
             int origenNuevo = BuscarIndiceEstacion(estacionesOrdenadas, origen);
             int destinoNuevo = BuscarIndiceEstacion(estacionesOrdenadas, destino);
 
-            return !viaje.Pasajes.Any(pasaje =>
+            return !pasajeService.ObtenerPasajesDeViaje(viaje).Any(pasaje =>
                 !pasaje.Cancelado &&
                 pasaje.Vagon.Numero == vagon.Numero &&
                 pasaje.Butaca.Numero == butaca.Numero &&
@@ -132,7 +143,7 @@ namespace BLL
             return origenNuevo < destinoExistente && destinoNuevo > origenExistente;
         }
 
-        private bool ContieneTrayecto(Viaje viaje, Estacion origen, Estacion destino)
+        private bool ContieneParadas(Viaje viaje, Estacion origen, Estacion destino)
         {
             List<Estacion> estacionesComerciales = ObtenerEstacionesComerciales(viaje);
             int indiceOrigen = BuscarIndiceEstacion(estacionesComerciales, origen);
@@ -141,6 +152,8 @@ namespace BLL
             return indiceOrigen >= 0 && indiceDestino >= 0 && indiceOrigen < indiceDestino;
         }
 
+        // Para la búsqueda comercial, se consideran estaciones comerciales el origen, destino y las paradas del recorrido.
+        //esta funcion crea una lista de estaciones comerciales a partir del recorrido del viaje, asegurándose de incluir el origen, destino y las paradas, y luego ordena esa lista según el orden en que aparecen en el recorrido.
         private List<Estacion> ObtenerEstacionesComerciales(Viaje viaje)
         {
             List<Estacion> estaciones = new List<Estacion>();
@@ -154,6 +167,9 @@ namespace BLL
 
             AgregarEstacionSiNoExiste(estaciones, viaje.Recorrido.Destino);
 
+            //es necesario ordenar ya que el origen, destino y paradas podrían no estar en el orden correcto
+            //según el recorrido, por lo que se llama a la función OrdenarEstacionesSegunRecorrido
+            //para asegurarse de que la lista de estaciones comerciales esté en el mismo orden que el recorrido del viaje.
             return OrdenarEstacionesSegunRecorrido(viaje, estaciones);
         }
 

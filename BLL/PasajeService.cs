@@ -7,25 +7,29 @@ namespace BLL
 {
     public class PasajeService
     {
+        private static readonly Dictionary<int, List<Pasaje>> pasajesPorViaje = new Dictionary<int, List<Pasaje>>();
+
         public void Crear(Pasaje pasaje)
         {
             ValidarPasaje(pasaje);
             ValidarRecorridoContratado(pasaje);
             ValidarButacaDisponible(pasaje);
 
-            pasaje.Viaje.Pasajes.Add(pasaje);
+            ObtenerPasajesDeViaje(pasaje.Viaje).Add(pasaje);
         }
 
         public void Borrar(Pasaje pasaje)
         {
             ValidarPasaje(pasaje);
 
-            if (!pasaje.Viaje.Pasajes.Contains(pasaje))
+            List<Pasaje> pasajes = ObtenerPasajesDeViaje(pasaje.Viaje);
+
+            if (!pasajes.Contains(pasaje))
             {
                 throw new Exception("El pasaje no pertenece al viaje indicado");
             }
 
-            pasaje.Viaje.Pasajes.Remove(pasaje);
+            pasajes.Remove(pasaje);
         }
 
         public void Cancelar(Pasaje pasaje)
@@ -40,21 +44,27 @@ namespace BLL
             pasaje.Cancelado = true;
         }
 
-        public List<Pasaje> Listar(Viaje viaje)
+        public List<Pasaje> ObtenerPasajesDeViaje(Viaje viaje)
         {
             if (viaje == null)
             {
                 throw new Exception("El viaje no puede ser nulo");
             }
 
-            return viaje.Pasajes;
+            if (!pasajesPorViaje.ContainsKey(viaje.Numero))
+            {
+                pasajesPorViaje[viaje.Numero] = new List<Pasaje>();
+            }
+
+            return pasajesPorViaje[viaje.Numero];
         }
+
 
         private void ValidarButacaDisponible(Pasaje nuevoPasaje)
         {
             List<Estacion> estacionesOrdenadas = ObtenerEstacionesOrdenadas(nuevoPasaje.Viaje);
 
-            bool butacaOcupada = nuevoPasaje.Viaje.Pasajes.Any(pasajeExistente =>
+            bool butacaOcupada = ObtenerPasajesDeViaje(nuevoPasaje.Viaje).Any(pasajeExistente =>
                 !pasajeExistente.Cancelado &&
                 pasajeExistente.Vagon.Numero == nuevoPasaje.Vagon.Numero &&
                 pasajeExistente.Butaca.Numero == nuevoPasaje.Butaca.Numero &&
@@ -165,11 +175,6 @@ namespace BLL
             if (pasaje.Viaje == null)
             {
                 throw new Exception("El pasaje debe tener un viaje");
-            }
-
-            if (pasaje.Viaje.Pasajes == null)
-            {
-                pasaje.Viaje.Pasajes = new List<Pasaje>();
             }
 
             if (pasaje.Pasajero == null)

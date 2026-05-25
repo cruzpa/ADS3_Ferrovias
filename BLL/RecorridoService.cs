@@ -87,23 +87,6 @@ namespace BLL
             return recorrido;
         }
 
-        public static Recorrido GetByNombre(string nombre)
-        {
-            if (string.IsNullOrWhiteSpace(nombre))
-            {
-                throw new Exception("Debe indicar el nombre del recorrido");
-            }
-
-            Recorrido recorrido;
-
-            if (!recorridos.TryGetValue(nombre, out recorrido))
-            {
-                throw new Exception("No existe un recorrido con ese nombre");
-            }
-
-            return recorrido;
-        }
-
         public static List<Recorrido> Listar()
         {
             return recorridos.Values.ToList();
