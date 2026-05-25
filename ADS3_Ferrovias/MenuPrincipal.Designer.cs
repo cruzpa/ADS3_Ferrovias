@@ -31,14 +31,23 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maquinistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoDeGestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPasajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarSesionToolStripMenuItem,
-            this.aBMToolStripMenuItem});
+            this.verPasajesToolStripMenuItem,
+            this.aBMToolStripMenuItem,
+            this.infoDeGestionToolStripMenuItem,
+            this.cerrarSesionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(950, 24);
@@ -54,9 +63,57 @@
             // 
             // aBMToolStripMenuItem
             // 
+            this.aBMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuarioToolStripMenuItem,
+            this.maquinistaToolStripMenuItem,
+            this.estacionToolStripMenuItem,
+            this.formacionesToolStripMenuItem,
+            this.viajesToolStripMenuItem});
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
             this.aBMToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.aBMToolStripMenuItem.Text = "ABMs";
+            // 
+            // maquinistaToolStripMenuItem
+            // 
+            this.maquinistaToolStripMenuItem.Name = "maquinistaToolStripMenuItem";
+            this.maquinistaToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.maquinistaToolStripMenuItem.Text = "Maquinista";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.usuarioToolStripMenuItem.Text = "Cliente";
+            // 
+            // estacionToolStripMenuItem
+            // 
+            this.estacionToolStripMenuItem.Name = "estacionToolStripMenuItem";
+            this.estacionToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.estacionToolStripMenuItem.Text = "Estacion, Tramos y Recorridos";
+            // 
+            // viajesToolStripMenuItem
+            // 
+            this.viajesToolStripMenuItem.Name = "viajesToolStripMenuItem";
+            this.viajesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.viajesToolStripMenuItem.Text = "Viajes";
+            // 
+            // formacionesToolStripMenuItem
+            // 
+            this.formacionesToolStripMenuItem.Name = "formacionesToolStripMenuItem";
+            this.formacionesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.formacionesToolStripMenuItem.Text = "Formaciones";
+            // 
+            // infoDeGestionToolStripMenuItem
+            // 
+            this.infoDeGestionToolStripMenuItem.Name = "infoDeGestionToolStripMenuItem";
+            this.infoDeGestionToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.infoDeGestionToolStripMenuItem.Text = "Info de Gestion";
+            // 
+            // verPasajesToolStripMenuItem
+            // 
+            this.verPasajesToolStripMenuItem.Name = "verPasajesToolStripMenuItem";
+            this.verPasajesToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.verPasajesToolStripMenuItem.Text = "Pasajes";
             // 
             // MenuPrincipal
             // 
@@ -80,6 +137,13 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maquinistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viajesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoDeGestionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verPasajesToolStripMenuItem;
     }
 }
 

@@ -112,12 +112,6 @@ namespace BLL
             foreach (Tramo tramo in viaje.Recorrido.Tramos)
             {
                 AgregarEstacionSiNoExiste(estaciones, tramo.Origen);
-
-                foreach (Estacion estacionIntermedia in tramo.EstacionesIntermedias)
-                {
-                    AgregarEstacionSiNoExiste(estaciones, estacionIntermedia);
-                }
-
                 AgregarEstacionSiNoExiste(estaciones, tramo.Destino);
             }
 

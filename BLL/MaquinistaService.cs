@@ -7,7 +7,7 @@ namespace BLL
 {
     public class MaquinistaService
     {
-        private readonly List<Maquinista> maquinistas = new List<Maquinista>();
+        private List<Maquinista> maquinistas = new List<Maquinista>();
 
         public void Crear(Maquinista maquinista)
         {
@@ -34,7 +34,7 @@ namespace BLL
 
             existente.Nombre = maquinista.Nombre;
             existente.Apellido = maquinista.Apellido;
-            existente.FormacionesHabilitadas = maquinista.FormacionesHabilitadas;
+            existente.CodigosFormacionesHabilitadas = maquinista.CodigosFormacionesHabilitadas;
         }
 
         public void Borrar(Maquinista maquinista)

@@ -1,9 +1,9 @@
-namespace BE
-{
-    public enum Categoria
+    namespace BE
     {
-        Turista,
-        Pullman,
-        Ejecutivo
+        public enum Categoria
+        {
+            Turista,
+            Pullman,
+            Ejecutivo
+        }
     }
-}

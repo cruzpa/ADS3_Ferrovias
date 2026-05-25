@@ -55,6 +55,7 @@
     <Compile Include="Usuario.cs" />
     <Compile Include="Vagon.cs" />
     <Compile Include="Viaje.cs" />
+    <Compile Include="ViajeResultadoBusqueda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

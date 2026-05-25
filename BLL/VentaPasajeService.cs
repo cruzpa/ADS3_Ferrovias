@@ -123,8 +123,7 @@ namespace BLL
         private bool TramoContieneEstacion(Tramo tramo, Estacion estacion)
         {
             return EsMismaEstacion(tramo.Origen, estacion) ||
-                   EsMismaEstacion(tramo.Destino, estacion) ||
-                   tramo.EstacionesIntermedias.Any(e => EsMismaEstacion(e, estacion));
+                   EsMismaEstacion(tramo.Destino, estacion);
         }
 
         private decimal CalcularDescuentoMenor(decimal importe, Pasajero pasajero)

@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EstacionService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="MaquinistaService.cs" />
     <Compile Include="PasajeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecorridoService.cs" />
     <Compile Include="SessionManager.cs" />
     <Compile Include="VentaPasajeService.cs" />
+    <Compile Include="ViajeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

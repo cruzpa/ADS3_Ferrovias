@@ -52,7 +52,24 @@ namespace ADS3_Ferrovias
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            menuStrip1.Visible = SessionManager.GetInstance.usuario != null;
+            bool usuarioLogueado = SessionManager.GetInstance.usuario != null;
+
+            menuStrip1.Visible = usuarioLogueado;
+
+            if (usuarioLogueado)
+            {
+                AbrirBuscarViaje();
+            }
+        }
+
+        private void AbrirBuscarViaje()
+        {
+            FormBuscarViaje formBuscarViaje = new FormBuscarViaje();
+
+            formBuscarViaje.MdiParent = this;
+            formBuscarViaje.StartPosition = FormStartPosition.Manual;
+            CentrarFormulario(formBuscarViaje);
+            formBuscarViaje.Show();
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)

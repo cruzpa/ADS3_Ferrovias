@@ -4,6 +4,7 @@ namespace BE
 {
     public class Recorrido
     {
+        public string Nombre { get; set; }
         public Estacion Origen { get; set; }
         public Estacion Destino { get; set; }
         public List<Tramo> Tramos { get; set; }
