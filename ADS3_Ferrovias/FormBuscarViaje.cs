@@ -19,6 +19,8 @@ namespace ADS3_Ferrovias
             this.ControlBox = false;
             this.MinimizeBox = false;
             this.MaximizeBox = false;
+
+            dgvViajes.CellContentClick += dgvViajes_CellContentClick;
         }
 
         private void FormBuscarViaje_Load(object sender, EventArgs e)
@@ -26,6 +28,7 @@ namespace ADS3_Ferrovias
             ConfigurarFormularioBusquedaViajes();
             CargarEstaciones();
             CargarCategorias();
+            nudCantidadPasajeros.Value = 1;
         }
 
         private void CargarCategorias()
@@ -41,6 +44,7 @@ namespace ADS3_Ferrovias
 
             cbDestino.DataSource = estaciones.ToList();
             cbDestino.DisplayMember = "Nombre";
+            cbDestino.SelectedItem = estaciones.Last();
         }
 
         private void ConfigurarFormularioBusquedaViajes()
@@ -111,6 +115,33 @@ namespace ADS3_Ferrovias
                 viajeService.BuscarViajes(fechaSalida, origen, destino, cantidadPasajeros, categoria);
 
             dgvViajes.DataSource = resultados;
+            foreach (var r in resultados)
+            {
+                Console.WriteLine(r);
+            }
+        }
+
+        private void dgvViajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0 || dgvViajes.Columns[e.ColumnIndex].Name != "Seleccionar")
+            {
+                return;
+            }
+
+            MenuPrincipal menuPrincipal = this.MdiParent as MenuPrincipal;
+
+            if (menuPrincipal != null)
+            {
+                ViajeResultadoBusqueda viajeSeleccionado = dgvViajes.Rows[e.RowIndex].DataBoundItem as ViajeResultadoBusqueda;
+                int cantidadPasajeros = (int)nudCantidadPasajeros.Value;
+
+                menuPrincipal.AbrirCompletarViaje(viajeSeleccionado, cantidadPasajeros);
+            }
+            else
+            {
+                FormCompletarViaje formCompletarViaje = new FormCompletarViaje();
+                formCompletarViaje.Show();
+            }
         }
     }
 }

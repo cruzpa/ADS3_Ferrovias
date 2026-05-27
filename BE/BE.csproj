@@ -47,6 +47,8 @@
     <Compile Include="Factura.cs" />
     <Compile Include="Formacion.cs" />
     <Compile Include="Maquinista.cs" />
+    <Compile Include="MedioPago.cs" />
+    <Compile Include="Parentesco.cs" />
     <Compile Include="Pasaje.cs" />
     <Compile Include="Pasajero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

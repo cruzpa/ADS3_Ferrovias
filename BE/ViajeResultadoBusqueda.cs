@@ -18,5 +18,17 @@ namespace BE
         public int LugaresDisponibles { get; set; }
         public decimal PrecioEstimado { get; set; }
         public Viaje Viaje { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FechaSalida:dd/MM/yyyy} {HoraSalida:hh\\:mm} | " +
+                   $"{Origen} -> {Destino} | " +
+                   $"Duración: {DuracionEstimada} | " +
+                   $"Paradas: {CantidadParadas} | " +
+                   $"Categoría: {Categoria} | " +
+                   $"Disponibles: {LugaresDisponibles} | " +
+                   $"Precio: ${PrecioEstimado}" +
+                   $"Recorrido: ${Viaje.Recorrido.Nombre}";
+        }
     }
 }

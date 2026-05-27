@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using BE;
 using BLL;
 
 namespace ADS3_Ferrovias
@@ -72,6 +74,80 @@ namespace ADS3_Ferrovias
             formBuscarViaje.Show();
         }
 
+        public void AbrirCompletarViaje(ViajeResultadoBusqueda viajeSeleccionado, int cantidadPasajeros)
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario is FormBuscarViaje)
+                {
+                    formulario.Hide();
+                }
+            }
+
+            FormCompletarViaje formCompletarViaje = new FormCompletarViaje(viajeSeleccionado, cantidadPasajeros);
+
+            formCompletarViaje.MdiParent = this;
+            formCompletarViaje.StartPosition = FormStartPosition.Manual;
+            CentrarFormulario(formCompletarViaje);
+            formCompletarViaje.Show();
+        }
+
+        public void MostrarBuscarViaje()
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario is FormBuscarViaje)
+                {
+                    formulario.Show();
+                    CentrarFormulario(formulario);
+                    formulario.BringToFront();
+                    return;
+                }
+            }
+
+            AbrirBuscarViaje();
+        }
+
+        public void AbrirComprarViaje(string detalleCompra, List<PasajeroCompraDetalle> pasajeros, decimal precioTotal)
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario is FormCompletarViaje)
+                {
+                    formulario.Hide();
+                }
+            }
+
+            FormComprarViaje formComprarViaje = new FormComprarViaje(detalleCompra, pasajeros, precioTotal);
+
+            formComprarViaje.MdiParent = this;
+            formComprarViaje.StartPosition = FormStartPosition.Manual;
+            CentrarFormulario(formComprarViaje);
+            formComprarViaje.Show();
+        }
+
+        public void MostrarCompletarViaje()
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario is FormCompletarViaje)
+                {
+                    formulario.Show();
+                    CentrarFormulario(formulario);
+                    formulario.BringToFront();
+                    return;
+                }
+            }
+        }
+
+        public void LimpiarMenuPrincipal()
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                formulario.Close();
+            }
+        }
+
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (SessionManager.GetInstance.usuario != null)
@@ -85,6 +161,16 @@ namespace ADS3_Ferrovias
             }
 
             InicializarLogin();
+        }
+
+        private void buscarViajeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                formulario.Close();
+            }
+
+            AbrirBuscarViaje();
         }
     }
 }

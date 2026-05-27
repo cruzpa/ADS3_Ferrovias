@@ -52,6 +52,18 @@
     <Compile Include="FormBuscarViaje.Designer.cs">
       <DependentUpon>FormBuscarViaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCompletarViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompletarViaje.Designer.cs">
+      <DependentUpon>FormCompletarViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormComprarViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComprarViaje.Designer.cs">
+      <DependentUpon>FormComprarViaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,13 +82,20 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasajeroCompraDetalle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormComprarViaje.resx">
+      <DependentUpon>FormComprarViaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarViaje.resx">
       <DependentUpon>FormBuscarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompletarViaje.resx">
+      <DependentUpon>FormCompletarViaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
