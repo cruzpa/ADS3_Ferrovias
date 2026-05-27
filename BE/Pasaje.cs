@@ -5,6 +5,7 @@ namespace BE
     public class Pasaje
     {
         public int Numero { get; set; }
+        public string ClienteUsername { get; set; }
         public Viaje Viaje { get; set; }
         public Pasajero Pasajero { get; set; }
         public Estacion Origen { get; set; }

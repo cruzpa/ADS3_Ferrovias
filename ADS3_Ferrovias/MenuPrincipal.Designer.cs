@@ -60,8 +60,9 @@
             // verPasajesToolStripMenuItem
             // 
             this.verPasajesToolStripMenuItem.Name = "verPasajesToolStripMenuItem";
-            this.verPasajesToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.verPasajesToolStripMenuItem.Text = "Pasajes";
+            this.verPasajesToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.verPasajesToolStripMenuItem.Text = "VerPasajes";
+            this.verPasajesToolStripMenuItem.Click += new System.EventHandler(this.verPasajesToolStripMenuItem_Click);
             // 
             // aBMToolStripMenuItem
             // 
@@ -110,6 +111,7 @@
             this.infoDeGestionToolStripMenuItem.Name = "infoDeGestionToolStripMenuItem";
             this.infoDeGestionToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
             this.infoDeGestionToolStripMenuItem.Text = "Info de Gestion";
+            this.infoDeGestionToolStripMenuItem.Click += new System.EventHandler(this.infoDeGestionToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 

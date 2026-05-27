@@ -64,11 +64,23 @@
     <Compile Include="FormComprarViaje.Designer.cs">
       <DependentUpon>FormComprarViaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInfoGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoGestion.Designer.cs">
+      <DependentUpon>FormInfoGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPasaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPasaje.Designer.cs">
+      <DependentUpon>FormPasaje.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegistro.cs">
       <SubType>Form</SubType>

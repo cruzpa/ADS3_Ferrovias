@@ -14,6 +14,7 @@ namespace BLL
             Pasaje pasaje = new Pasaje
             {
                 Numero = ObtenerProximoNumero(viaje),
+                ClienteUsername = SessionManager.GetInstance.usuario?.Username,
                 Viaje = viaje,
                 Pasajero = pasajero,
                 Origen = origen,

@@ -172,5 +172,35 @@ namespace ADS3_Ferrovias
 
             AbrirBuscarViaje();
         }
+
+        private void verPasajesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                formulario.Close();
+            }
+
+            FormPasaje formPasaje = new FormPasaje();
+
+            formPasaje.MdiParent = this;
+            formPasaje.StartPosition = FormStartPosition.Manual;
+            CentrarFormulario(formPasaje);
+            formPasaje.Show();
+        }
+
+        private void infoDeGestionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                formulario.Close();
+            }
+
+            FormInfoGestion formInfoGestion = new FormInfoGestion();
+
+            formInfoGestion.MdiParent = this;
+            formInfoGestion.StartPosition = FormStartPosition.Manual;
+            CentrarFormulario(formInfoGestion);
+            formInfoGestion.Show();
+        }
     }
 }
