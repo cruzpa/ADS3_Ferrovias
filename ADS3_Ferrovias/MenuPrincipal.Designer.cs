@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.buscarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPasajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +39,6 @@
             this.viajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoDeGestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,14 +53,22 @@
             this.cerrarSesionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1267, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(950, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // buscarViajeToolStripMenuItem
+            // 
+            this.buscarViajeToolStripMenuItem.Name = "buscarViajeToolStripMenuItem";
+            this.buscarViajeToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.buscarViajeToolStripMenuItem.Text = "BuscarViaje";
+            this.buscarViajeToolStripMenuItem.Click += new System.EventHandler(this.buscarViajeToolStripMenuItem_Click);
             // 
             // verPasajesToolStripMenuItem
             // 
             this.verPasajesToolStripMenuItem.Name = "verPasajesToolStripMenuItem";
-            this.verPasajesToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.verPasajesToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.verPasajesToolStripMenuItem.Text = "VerPasajes";
             this.verPasajesToolStripMenuItem.Click += new System.EventHandler(this.verPasajesToolStripMenuItem_Click);
             // 
@@ -73,68 +81,60 @@
             this.formacionesToolStripMenuItem,
             this.viajesToolStripMenuItem});
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.aBMToolStripMenuItem.Text = "ABMs";
             // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.usuarioToolStripMenuItem.Text = "Cliente";
             // 
             // maquinistaToolStripMenuItem
             // 
             this.maquinistaToolStripMenuItem.Name = "maquinistaToolStripMenuItem";
-            this.maquinistaToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
+            this.maquinistaToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.maquinistaToolStripMenuItem.Text = "Maquinista";
             // 
             // estacionToolStripMenuItem
             // 
             this.estacionToolStripMenuItem.Name = "estacionToolStripMenuItem";
-            this.estacionToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
+            this.estacionToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.estacionToolStripMenuItem.Text = "Estacion, Tramos y Recorridos";
             // 
             // formacionesToolStripMenuItem
             // 
             this.formacionesToolStripMenuItem.Name = "formacionesToolStripMenuItem";
-            this.formacionesToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
+            this.formacionesToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.formacionesToolStripMenuItem.Text = "Formaciones";
             // 
             // viajesToolStripMenuItem
             // 
             this.viajesToolStripMenuItem.Name = "viajesToolStripMenuItem";
-            this.viajesToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
+            this.viajesToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.viajesToolStripMenuItem.Text = "Viajes";
             // 
             // infoDeGestionToolStripMenuItem
             // 
             this.infoDeGestionToolStripMenuItem.Name = "infoDeGestionToolStripMenuItem";
-            this.infoDeGestionToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
-            this.infoDeGestionToolStripMenuItem.Text = "Info de Gestion";
+            this.infoDeGestionToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.infoDeGestionToolStripMenuItem.Text = "Reportes";
             this.infoDeGestionToolStripMenuItem.Click += new System.EventHandler(this.infoDeGestionToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.cerrarSesionToolStripMenuItem.Text = "CerrarSesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
-            // buscarViajeToolStripMenuItem
-            // 
-            this.buscarViajeToolStripMenuItem.Name = "buscarViajeToolStripMenuItem";
-            this.buscarViajeToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
-            this.buscarViajeToolStripMenuItem.Text = "BuscarViaje";
-            this.buscarViajeToolStripMenuItem.Click += new System.EventHandler(this.buscarViajeToolStripMenuItem_Click);
-            // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 684);
+            this.ClientSize = new System.Drawing.Size(950, 556);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuPrincipal";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);

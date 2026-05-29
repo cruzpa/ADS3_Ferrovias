@@ -195,7 +195,7 @@ namespace ADS3_Ferrovias
                 formulario.Close();
             }
 
-            FormInfoGestion formInfoGestion = new FormInfoGestion();
+            FormReportes formInfoGestion = new FormReportes();
 
             formInfoGestion.MdiParent = this;
             formInfoGestion.StartPosition = FormStartPosition.Manual;

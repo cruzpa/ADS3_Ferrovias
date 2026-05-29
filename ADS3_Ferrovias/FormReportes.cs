@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace ADS3_Ferrovias
 {
-    public partial class FormInfoGestion : Form
+    public partial class FormReportes : Form
     {
         private readonly GestionService gestionService = new GestionService();
         private readonly ViajeService viajeService = new ViajeService();
 
-        public FormInfoGestion()
+        public FormReportes()
         {
             InitializeComponent();
 
@@ -22,7 +22,7 @@ namespace ADS3_Ferrovias
             this.MaximizeBox = false;
         }
 
-        private void FormInfoGestion_Load(object sender, EventArgs e)
+        private void FormReportes_Load(object sender, EventArgs e)
         {
             CargarTiposReporte();
             CargarViajes();

@@ -1,6 +1,6 @@
 namespace ADS3_Ferrovias
 {
-    partial class FormInfoGestion
+    partial class FormReportes
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -32,18 +32,20 @@ namespace ADS3_Ferrovias
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(20, 20);
+            this.lblTitulo.Location = new System.Drawing.Point(15, 16);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(157, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(75, 20);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Info de Gestion";
+            this.lblTitulo.Text = "Reportes";
             // 
             // lblTipoReporte
             // 
             this.lblTipoReporte.AutoSize = true;
-            this.lblTipoReporte.Location = new System.Drawing.Point(22, 70);
+            this.lblTipoReporte.Location = new System.Drawing.Point(16, 57);
+            this.lblTipoReporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoReporte.Name = "lblTipoReporte";
-            this.lblTipoReporte.Size = new System.Drawing.Size(101, 16);
+            this.lblTipoReporte.Size = new System.Drawing.Size(79, 13);
             this.lblTipoReporte.TabIndex = 1;
             this.lblTipoReporte.Text = "Tipo de reporte";
             // 
@@ -51,18 +53,20 @@ namespace ADS3_Ferrovias
             // 
             this.cbTipoReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoReporte.FormattingEnabled = true;
-            this.cbTipoReporte.Location = new System.Drawing.Point(25, 92);
+            this.cbTipoReporte.Location = new System.Drawing.Point(19, 75);
+            this.cbTipoReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbTipoReporte.Name = "cbTipoReporte";
-            this.cbTipoReporte.Size = new System.Drawing.Size(260, 24);
+            this.cbTipoReporte.Size = new System.Drawing.Size(196, 21);
             this.cbTipoReporte.TabIndex = 2;
             this.cbTipoReporte.SelectedIndexChanged += new System.EventHandler(this.cbTipoReporte_SelectedIndexChanged);
             // 
             // lblViaje
             // 
             this.lblViaje.AutoSize = true;
-            this.lblViaje.Location = new System.Drawing.Point(315, 70);
+            this.lblViaje.Location = new System.Drawing.Point(236, 57);
+            this.lblViaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblViaje.Name = "lblViaje";
-            this.lblViaje.Size = new System.Drawing.Size(37, 16);
+            this.lblViaje.Size = new System.Drawing.Size(30, 13);
             this.lblViaje.TabIndex = 3;
             this.lblViaje.Text = "Viaje";
             // 
@@ -70,16 +74,18 @@ namespace ADS3_Ferrovias
             // 
             this.cbViaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbViaje.FormattingEnabled = true;
-            this.cbViaje.Location = new System.Drawing.Point(318, 92);
+            this.cbViaje.Location = new System.Drawing.Point(238, 75);
+            this.cbViaje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbViaje.Name = "cbViaje";
-            this.cbViaje.Size = new System.Drawing.Size(160, 24);
+            this.cbViaje.Size = new System.Drawing.Size(121, 21);
             this.cbViaje.TabIndex = 4;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(510, 88);
+            this.btnConsultar.Location = new System.Drawing.Point(382, 72);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(120, 32);
+            this.btnConsultar.Size = new System.Drawing.Size(90, 26);
             this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -88,27 +94,29 @@ namespace ADS3_Ferrovias
             // lblResultado
             // 
             this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblResultado.Location = new System.Drawing.Point(25, 145);
+            this.lblResultado.Location = new System.Drawing.Point(19, 118);
+            this.lblResultado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(755, 55);
+            this.lblResultado.Size = new System.Drawing.Size(567, 45);
             this.lblResultado.TabIndex = 6;
             this.lblResultado.Text = "Resultado";
             // 
             // dgvResultado
             // 
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultado.Location = new System.Drawing.Point(25, 220);
+            this.dgvResultado.Location = new System.Drawing.Point(19, 179);
+            this.dgvResultado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvResultado.Name = "dgvResultado";
             this.dgvResultado.RowHeadersWidth = 51;
             this.dgvResultado.RowTemplate.Height = 24;
-            this.dgvResultado.Size = new System.Drawing.Size(755, 205);
+            this.dgvResultado.Size = new System.Drawing.Size(566, 167);
             this.dgvResultado.TabIndex = 7;
             // 
-            // FormInfoGestion
+            // FormReportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.dgvResultado);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnConsultar);
@@ -117,9 +125,10 @@ namespace ADS3_Ferrovias
             this.Controls.Add(this.cbTipoReporte);
             this.Controls.Add(this.lblTipoReporte);
             this.Controls.Add(this.lblTitulo);
-            this.Name = "FormInfoGestion";
-            this.Text = "FormInfoGestion";
-            this.Load += new System.EventHandler(this.FormInfoGestion_Load);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "FormReportes";
+            this.Text = "FormReportes";
+            this.Load += new System.EventHandler(this.FormReportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
